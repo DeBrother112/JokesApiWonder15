@@ -9,6 +9,7 @@ const __dirname = path.dirname(__filename)
 let datapath = path.join(__dirname, "data")
 
 const server = http.createServer(function (req, res) {
+    res.setHeader("Access-Control-Allow-Origin", "*")
     if (req.url == "/jokes" && req.method == "GET") {
         getAllJokes(req, res)
     }
